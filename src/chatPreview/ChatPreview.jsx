@@ -1,6 +1,7 @@
 import { Chevron, Video } from "react-ios-icons";
 import { assets } from "../assets/assets";
 import ChatSection from "../components/ChatSection";
+import TypingSection from "../components/TypingSection";
 
 function ChatPreview() {
   return (
@@ -46,7 +47,10 @@ function ChatPreview() {
         </div>
 
         {/* Typing */}
-        <div className="typing-section"></div>
+        <div className="typing-section">
+          <TypingSection />
+
+        </div>
       </div>
     </div>
   );
