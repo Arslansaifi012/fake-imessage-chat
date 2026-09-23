@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Microphone } from "react-ios-icons";
 
-function TypingSection({ onSend }) {
+function TypingSection({ onSend, sendDataToparent }) {
   const [text, setText] = useState("");
+  const [openLiberary, setopenLiberary] = useState(true);
 
   const handleSend = () => {
     if (!text.trim()) return;
@@ -17,22 +18,25 @@ function TypingSection({ onSend }) {
     }
   };
 
-  const openLiberaryfunction = (e) => {
-  
-    
-    
-    
-    
+  const openLiberaryfucntion = () => {
+   if (!openLiberary) {
+     sendDataToparent(openLiberary);
+     setopenLiberary(true);
+
+   } else {
+     sendDataToparent(openLiberary);
+     setopenLiberary(false);
+   }
+
   }
 
   return (
     <div className="w-full bg-[#f9f9fb]/90 backdrop-blur-md border-t border-[#e5e5ea] px-3 py-2">
       <div className="max-w-[440px] mx-auto flex items-center gap-2">
-        
         <button
           type="button"
           aria-label="Add attachment"
-          onClick={openLiberaryfunction}
+          onClick={openLiberaryfucntion}
           className="h-8 w-8 flex-shrink-0 rounded-full bg-[#e3e3e8] text-[#86868b] hover:bg-[#d6d6dc] active:scale-95 transition-all flex items-center justify-center font-medium text-lg"
         >
           +
@@ -48,7 +52,6 @@ function TypingSection({ onSend }) {
             className="w-full h-9 pl-3.5 pr-10 text-[16px] placeholder-[#8e8e93] bg-white border border-[#c6c6c8] focus:border-[#8e8e93] rounded-full outline-none leading-none transition-colors"
           />
 
-         
           <div className="absolute right-1.5 flex items-center justify-center">
             {text.trim().length > 0 ? (
               <button

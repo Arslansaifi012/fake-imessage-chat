@@ -20,7 +20,10 @@ function ChatSection() {
     { text: "Hey! Are we still on for dinner tonight?", sent: true },
     { text: "Hey! Are we still on for dinner tonight?", sent: true },
     { text: "Hey! Are we still on for dinner tonight?", sent: true },
-
+    { text: "Hey! Are we still on for dinner tonight?", sent: true },
+    { text: "Hey! Are we still on for dinner tonight?", sent: true },
+    { text: "Hey! Are we still on for dinner tonight?", sent: true },
+    { text: "Hey! Are we still on for dinner tonight?", sent: true },
   ];
 
   return (
@@ -37,7 +40,7 @@ function ChatSection() {
           gap: 12px;
 
           /* --- SCROLLING ACTIVE WITH HIDDEN SCROLLBAR --- */
-          height: 600px;
+          // height: 600px;
           max-height: 85vh;
           overflow-y: auto;          /* scrolling still works */
           overflow-x: hidden;
