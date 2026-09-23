@@ -2,17 +2,18 @@ import { Chevron, Video } from "react-ios-icons";
 import { assets } from "../assets/assets";
 import ChatSection from "../components/ChatSection";
 import TypingSection from "../components/TypingSection";
+import Liberary from "../components/Liberary";
 
 function ChatPreview() {
   return (
     <div className="border border-dashed w-[50%] p-8 flex items-center justify-center">
-      <div className="w-[50%] bg-[#F8F8FA]">
+      <div className="w-[50%] bg-[#F8F8FA] relative">
         {/* Header */}
         <div className="relative w-full h-[88px] border-b border-gray-300">
           {/* Left */}
-          <div className="absolute left-3 top-0 h-full flex items-center gap-2">
-            <div className="rotate-[270deg] text-[#087CFF]">
-              <Chevron />
+          <div className="absolute left-3 top-0 h-full flex items-center  text-3xl">
+            <div className="rotate-[90deg] text-[#087CFF] font-bold  ">
+              <Chevron className="h-12 w-12 text-3xl stroke-[3]" />
             </div>
 
             <div className="flex items-center justify-center h-6 min-w-9 px-2 rounded-full bg-[#087CFF]">
@@ -37,7 +38,7 @@ function ChatPreview() {
 
           {/* Right */}
           <div className="absolute right-5 top-0 h-full flex items-center text-[#087CFF]">
-            <Video />
+            <Video className="w-12 h-12 stroke-[3]"/>
           </div>
         </div>
 
@@ -49,7 +50,10 @@ function ChatPreview() {
         {/* Typing */}
         <div className="typing-section">
           <TypingSection />
+        </div>
 
+        <div className="liberary-section absolute bottom-0 right-0 left-0 hidden">
+          <Liberary />
         </div>
       </div>
     </div>
